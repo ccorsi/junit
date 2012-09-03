@@ -7,7 +7,6 @@ import org.junit.tests.experimental.results.PrintableResultTest;
 import org.junit.tests.experimental.results.ResultMatchersTest;
 import org.junit.tests.experimental.runners.CombinationTestTest;
 import org.junit.tests.experimental.runners.ParameterizedTestTest;
-import org.junit.tests.experimental.runners.PermutationTest;
 import org.junit.tests.experimental.runners.PermutationTestTest;
 import org.junit.tests.experimental.theories.ParameterSignatureTest;
 import org.junit.tests.experimental.theories.ParameterizedAssertionErrorTest;
