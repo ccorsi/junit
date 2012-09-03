@@ -5,6 +5,10 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.junit.tests.experimental.results.PrintableResultTest;
 import org.junit.tests.experimental.results.ResultMatchersTest;
+import org.junit.tests.experimental.runners.CombinationTestTest;
+import org.junit.tests.experimental.runners.ParameterizedTestTest;
+import org.junit.tests.experimental.runners.PermutationTest;
+import org.junit.tests.experimental.runners.PermutationTestTest;
 import org.junit.tests.experimental.theories.ParameterSignatureTest;
 import org.junit.tests.experimental.theories.ParameterizedAssertionErrorTest;
 import org.junit.tests.experimental.theories.extendingwithstubs.StubbedTheoriesTest;
@@ -22,7 +26,8 @@ import org.junit.tests.experimental.theories.runner.WithOnlyTestAnnotations;
 		ResultMatchersTest.class, WithDataPointMethod.class,
 		ParameterSignatureTest.class, WhenNoParametersMatch.class,
 		WithExtendedParameterSources.class, StubbedTheoriesTest.class, 
-		WithOnlyTestAnnotations.class })
+		WithOnlyTestAnnotations.class, ParameterizedTestTest.class,
+        CombinationTestTest.class, PermutationTestTest.class })
 public class ExperimentalTests {
 
 }
