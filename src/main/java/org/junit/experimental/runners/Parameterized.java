@@ -290,7 +290,7 @@ public class Parameterized extends Suite {
 					}
 				}
 			}
-			// Removes all not compliant methods with the parameters.
+			// Removes all noncompliant test methods for the given parameters....
 			methods.removeAll(remove);
 			// Return the resulting test methods, can be empty causing an failure...
 			return methods;

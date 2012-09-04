@@ -186,13 +186,13 @@ public class Combination extends Suite {
 		String name() default "{list}";
 	}
 	
-	private static class TestClassRunnerForPermutations extends BlockJUnit4ClassRunner {
+	private static class TestClassRunnerForCombination extends BlockJUnit4ClassRunner {
 
 		private Command[]  commands;
 		private Attributes annotation;
 		private String     name;
 
-		public TestClassRunnerForPermutations(Class<?> clazz, Command commands[], String name, Attributes annotation)
+		public TestClassRunnerForCombination(Class<?> clazz, Command commands[], String name, Attributes annotation)
 				throws InitializationError {
 			super(clazz);
 			this.commands   = commands;
@@ -295,7 +295,7 @@ public class Combination extends Suite {
 					Attributes attributes= frameworkMethod
 							.getAnnotation(Attributes.class);
 					String namePattern= attributes.name();
-					runners.add(new TestClassRunnerForPermutations(javaClass,
+					runners.add(new TestClassRunnerForCombination(javaClass,
 							cmds, nameFor(namePattern, cmds), attributes));
 				}
 			} catch (ClassCastException e) {
@@ -350,7 +350,7 @@ public class Combination extends Suite {
 		}
 
 		/* (non-Javadoc)
-		 * @see org.apache.activemq.junit.Combination.CommandFactory#create(java.lang.Object)
+		 * @see org.junit.experimental.runners.Combination.CommandFactory#create(java.lang.Object)
 		 */
 		public Command create(Object value) {
 			return new FieldCommand(field, value);
@@ -367,7 +367,7 @@ public class Combination extends Suite {
 		}
 		
 		/* (non-Javadoc)
-		 * @see org.apache.activemq.junit.Combination.CommandFactory#create(java.lang.Object)
+		 * @see org.junit.experimental.runners.Combination.CommandFactory#create(java.lang.Object)
 		 */
 		public Command create(Object value) {
 			return new MethodCommand(method, value);
@@ -390,7 +390,7 @@ public class Combination extends Suite {
 		}
 		
 		/* (non-Javadoc)
-		 * @see org.apache.activemq.junit.Combination.Command#execute(java.lang.Object)
+		 * @see org.junit.experimental.runners.Combination.Command#execute(java.lang.Object)
 		 */
 		public void execute(Object object) throws Exception {
 			field.set(object, value);
@@ -417,7 +417,7 @@ public class Combination extends Suite {
 		}
 
 		/* (non-Javadoc)
-		 * @see org.apache.activemq.junit.Combination.Command#execute(java.lang.Object)
+		 * @see org.junit.experimental.runners.Combination.Command#execute(java.lang.Object)
 		 */
 		public void execute(Object object) throws Exception {
 			method.invoke(object, value);
@@ -480,7 +480,7 @@ public class Combination extends Suite {
 
 		AttributesListIterable(Map<String, CommandFactory> factories,
 				Map<String, Object[]> attributesMap) {
-			this.factories    = factories;
+			this.factories     = factories;
 			this.attributesMap = attributesMap;
 		}
 		
